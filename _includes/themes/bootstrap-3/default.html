@@ -73,9 +73,42 @@
       </nav>
 
       <div class="container">
+      <div class="col-md-9">
         {{ content }}
       </div>
-
+      
+      <div class="col-md-3 visible-lg visible-md">
+	<section>
+	 <h4>Categories</h4>
+	 <ul id="categories">{% for category in site.categories limit: 15 %}
+	   <li class="category">
+	     <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}">{{ category[0] }}</a>
+	   </li>{% endfor %}
+	 </ul>
+	</section>
+	<section>
+	 <h4>Recent Posts</h4>
+	 <ul id="recent_posts">{% for post in site.posts limit: 10 %}
+	   <li class="post">
+	     <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+	   </li>{% endfor %}
+	 </ul>
+	</section>
+	<section>
+	 <h4>Recent Comments</h4>
+	 <ul id="recent_comments">{% for comment in site.posts limit: 8 %}
+	   <li class="comment">
+	     <a href=""></a>
+	   </li>{% endfor %}
+	 </ul>
+	</section>
+	<section>
+	 <h4>Donate</h4>
+	 <img src="/assets/images/alipay.jpg" width="150" />
+	 <p class="small">If this blog is helpful for you, you can donate us!</p>
+	</section>
+      </div>
+    </div>
     </div>
 
     <div id="footer">
