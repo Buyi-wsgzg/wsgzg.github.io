@@ -42,6 +42,33 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
   font-weight: bold; }
 
+/* to-top*/
+#to_top {
+  width: 40px;
+  height: 64px;
+  background: #555;
+  background: rgba(85,85,85,0.3);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: none; }
+
+#to_top a {
+  display: block;
+  width: 40px;
+  height: 32px;
+  font-size: 26px;
+  line-height: 32px;
+  font-family: verdana,arial;
+  color: #fff;
+  text-decoration: none;
+  background: 0; }
+
+#to_top a:hover {
+  background: #3d5998; }
+
 /* tag_box */
 .tag_box {
   list-style: none;

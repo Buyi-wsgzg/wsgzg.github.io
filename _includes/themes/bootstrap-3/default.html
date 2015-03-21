@@ -65,7 +65,7 @@
           <ul class="nav navbar-nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
-            {% include JB/custom_pages_list %}
+            {% include custom/pages_list %}
           </ul>
 	  <ul class="nav navbar-nav">
 	    {% if site.author.github %}
@@ -136,6 +136,7 @@
           with help from <a href="http://wsgzg.github.io" target="_blank" title="The Wsgzg's Blog is here!">Wsgzg's Blog in Github</a>
           and <a href="http://weibo.com/wsgzg" target="_blank">Wsgzg</a>
         </p>
+	{% include custom/to_top %}
     </div>
 
     {% include JB/analytics %}
@@ -145,6 +146,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ ASSET_PATH }}/bootstrap/js/to_top.js"></script>
     </div>
   </body>
 </html>
