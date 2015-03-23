@@ -116,12 +116,7 @@
 	 </ul>
 	</section>
 	<section>
-	 <h4>Recent Comments</h4>
-	 <ul id="recent_comments">{% for comment in site.posts limit: 8 %}
-	   <li class="comment">
-	     <a href=""></a>
-	   </li>{% endfor %}
-	 </ul>
+	 {% include custom/duo_shuo %}
 	</section>
 	<section>
 	 <h4>Donate</h4>

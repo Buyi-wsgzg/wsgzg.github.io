@@ -81,9 +81,17 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : duoshuo
     disqus :
       short_name : wsgzg
+    duoshuo :
+      short_name : wsgzg
+      duoshuo_asides_num: 10      # 侧边栏评论显示条目数
+      duoshuo_asides_avatars: 1   # 侧边栏评论是否显示头像
+      duoshuo_asides_time: 1      # 侧边栏评论是否显示时间
+      duoshuo_asides_title: 1     # 侧边栏评论是否显示标题
+      duoshuo_asides_admin: 1     # 侧边栏评论是否显示作者评论
+      duoshuo_asides_length: 18   # 侧边栏评论截取的长度
     livefyre :
       site_id : 123
     intensedebate :
@@ -93,7 +101,7 @@ JB :
       num_posts: 5
       width: 580
       colorscheme: light
-   
+ 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
