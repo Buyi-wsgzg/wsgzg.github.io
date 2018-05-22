@@ -11,11 +11,11 @@ markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 
-#markdown: kramdown
-kramdown:
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: table
+##markdown: kramdown
+#kramdown:
+#  use_coderay: true
+#  coderay:
+#    coderay_line_numbers: table
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
