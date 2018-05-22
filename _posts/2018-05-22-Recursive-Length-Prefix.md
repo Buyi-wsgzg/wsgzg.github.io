@@ -6,13 +6,13 @@ tags : [RLP, Ethereum,  wiki]
 ---
 {% include JB/setup %}
 
-##RLP
+## RLP
 
 RLP（递归长度前缀编码）的目的是用来编码二进制数据的任意嵌套数组。RLP是以太坊中用来序列化对象的主要编码方式。RLP的唯一目的就是用来编码结构体；编码特殊数据类型（如字符串，浮点数）留给高层协议；RLP编码数据必须被解释成无前导零的大端字节序二进制格式（这使得整数0与空字节数组是等价的）。带有前导零的数在Deserialise时被视为无效。字符串长度也必须按照这种方式编码。
 
 如果想要使用RLP编码字典，推荐两种规范的编码格式：一是使用key的字典序来组织`[[k1,v1], [k2,v2]...]`，二是采用以太坊使用的[Patricia Tree](https://github.com/ethereum/wiki/wiki/Patricia-Tree)编码。
 
-###定义
+### 定义
 
 RLP编码只处理两类数据，它们是：
 
@@ -58,20 +58,29 @@ def to_binary(x):
 
 ```
 
-###RLP编码示例
+### RLP编码示例
 
 字符串"dog" = `[0x83, 'd', 'o', 'g']`
+
 列表["cat", "dog"] = `[0xc8, 0x83, 'c', 'a', 't', 0x83, 'd', 'o', 'g']`
+
 空字符串("null") = `[0x80]`
+
 空列表 = `[0xc0]`
+
 整数0 = `[0x80]`
+
 编码的整数0("\x00") = `[0x00]`
+
 编码的整数15("\x0f") = `[0x0f]`
+
 编码的整数1024("\x04\x00") = `[0x82, 0x04, 0x00]`
+
 3的[集合论定义](http://en.wikipedia.org/wiki/Set-theoretic_definition_of_natural_numbers)——`[ [], [[]], [ [], [[]] ] ] = [ 0xc7, 0xc0, 0xc1, 0xc0, 0xc3, 0xc0, 0xc1, 0xc0 ]`
+
 字符串""Lorem ipsum dolor sit amet, consectetur adipisicing elit" = `[ 0xb8, 0x38, 'L', 'o', 'r', 'e', 'm', ' ', ... , 'e', 'l', 'i', 't' ]`
 
-###RLP解码
+### RLP解码
 
 根据RLP编码的规则与处理过程，RLP解码的输入应该看做是二进制数据数组，处理过程如下：
 
