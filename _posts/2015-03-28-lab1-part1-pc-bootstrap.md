@@ -6,7 +6,7 @@ tags : [JOS, lab]
 ---
 {% include JB/setup %}
 
-###汇编语言学习
+### 汇编语言学习
 
 相关推荐资料
 
@@ -14,7 +14,7 @@ tags : [JOS, lab]
 - [IA-32 Intel Architecture Software Developer's Manuals](http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html)
 - [80386 Programmer's Reference Manual](http://pdosnew.csail.mit.edu/6.828/2014/readings/i386/toc.htm)
 
-###x86仿真
+### x86仿真
 
 JOS使用仿真器来代替真实的物理机器运行操作系统。在仿真器上实验的好处之一就是可以在操作系统内部设置断点，但在真实的机器上，做到这一点是非常困难的。JOS使用qemu仿真器进行实验。但是qemu的debug功能不能支持对boot过程的调试，好在qemu支持远程debug，本实验中使用GNU debugger（GDB）来调试JOS，它可以深入到调试JOS的boot过程。
 当从git的仓库中`git clone`出实验代码后，进入目录，运行`make`，如果没有出现错误，我们得到kernel image（kernel.img）。
@@ -79,7 +79,7 @@ JOS使用仿真器来代替真实的物理机器运行操作系统。在仿真�
 	Kernel executable memory footprint: 75KB
 	K>
 
-###物理内存布局
+### 物理内存布局
 
 PC的物理地址空间被硬布线成下面的内存布局：
 
@@ -89,7 +89,7 @@ PC的物理地址空间被硬布线成下面的内存布局：
 
 > Intel的80286和80386处理器最终“突破1MB内存墙”，支持16MB和4GB的物理地址空间。为了保持和已有软件的向下兼容性，PC架构师们不得不保留原始内存的1MB低内存物理地址空间。因此，现代PC都有一个“空洞”，从物理地址0x000a0000到0x00100000，划分RAM为“低内存”（最开始的640KB）和“扩展内存”。此外，32-bit物理地址空间的最高端部分通常被BIOS保留给PCI设备使用。
 
-###ROM BIOS
+### ROM BIOS
 在实验中，我们将通过qemu的debug功能来观察IA-32兼容计算机的boot过程。
 打开两个终端窗口，其中一个输入`make qemu-gdb`，命令启动qemu且qemu停留在处理器执行第一条指令前，等待gdb的调试连接，在第二个终端的相同目录运行`make`，再运行`gdb`，可以看到如下显示信息：
 

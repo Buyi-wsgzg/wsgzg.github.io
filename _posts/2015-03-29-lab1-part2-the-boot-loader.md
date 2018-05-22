@@ -6,7 +6,7 @@ tags : [JOS, lab]
 ---
 {% include JB/setup %}
 
-###Boot Loader
+### Boot Loader
 
 软盘和硬盘划分每512字节为一个扇区（sector）。扇区是磁盘的最小传输单元：每次的读/写操作区域必须是以扇区对齐的整数个扇区。如果磁盘是可启动的，则第一个扇区称为启动扇区（boot sector），里面存储着boot loader的代码。当BIOS找到可启动软盘或硬盘时，它加载启动扇区的512字节到内存地址0x7c00至0xdff中，然后使用`jmp`指令设置CS:IP跳转到0000:7c00，再将控制权交给boot loader。类似BIOS的加载地址，这些地址都是可选的——但是，对于PC来说，这些加载地址都成为了默认的标准。
 实验中采用硬盘启动机制，这意味着我们的boot loader必须小于512字节，boot loader包括一个汇编源文件`boot/boot.S`和一个C源文件`boot/main.c`。boot loader必须具备两个主要功能：
@@ -96,7 +96,7 @@ EXEC_P, HAS_SYMS, D_PAGED
 start address 0x0010000c
 ```
 
-###Kernel加载
+### Kernel加载
 
 为了理解`boot/main.c`文件，我们需要知道ELF文件格式。ELF是一种二进制文件，全称是“Executable and Linkable Format”，如`obj/kern/kernel`就是ELF格式的二进制镜像文件。ELF文件以一个固定长度的ELF头（ELF header）开始，后面紧接着一个变长的程序头（program header），这个程序头列举了所有将要被载入的程序段（program section），每个程序段都是连续的代码块或数据块，ELF文件格式的C语言定义在`inc/elf.h`中。通过`objdump`或者`i386-jos-elf-objdump`命令可以查看kernel镜像的段信息：
 
