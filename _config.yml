@@ -4,8 +4,6 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-#highlightjs: true
-
 #markdown: redcarpet
 #redcarpet:
 #  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
@@ -13,10 +11,11 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 markdown: kramdown
 #highlighter: pygments
 highlighter: rouge
-kramdown:
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: table
+highlightjs: true
+#kramdown:
+#  use_coderay: true
+#  coderay:
+#    coderay_line_numbers: table
 #    syntax_highlighter: coderay
 #
 # Themes are encouraged to use these universal variables 
