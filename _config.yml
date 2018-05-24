@@ -97,7 +97,7 @@ JB :
     provider : gitment
     gitment :
       id : wsgzg
-      account : wsgzg1991@163.com #github account
+      account : wsgzg #github account
       repo : wsgzg.github.io
       client_id : d39f98338f7938c7068e
       client_secret : 30f134a814d23cb2e393765a14a096a83e5a86f6
