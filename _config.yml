@@ -143,6 +143,11 @@ JB :
         baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
         idsite : '1'                   # the id of the site on Piwik
 
+  # Settings learncloud information
+  leancloud:
+    enable: true
+    app_id: TzJbHSdRn4POxopYbAE66v9M-gzGzoHsz
+    app_key: m7zPfU8moaYSQsNCJYuGUjon
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.
   # Set 'provider' to the sharing provider you want to use.

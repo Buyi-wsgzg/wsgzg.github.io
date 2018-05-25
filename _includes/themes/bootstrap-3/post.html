@@ -5,7 +5,17 @@
 <div class="row post-full">
   <div class="col-xs-12">
     <div class="date">
+	    <span class="glyphicon glyphicon-time"></span>
       <span>{{ page.date | date_to_long_string }}</span>
+      <div class="post-leancloud">
+	        {% if site.JB.leancloud.enable %}
+	        <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+	        	<span class="post-meta-divider">|</span>
+	        	<span class="post-meta-item-text">浏览量:</span>
+	        	<span class="leancloud-visitors-count"></span>
+	        </span>
+	        {% endif %}
+      </div>
     </div>
     <div class="content">
       {{ content }}

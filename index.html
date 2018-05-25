@@ -13,7 +13,7 @@ title: "Stay hungry,Stay foolish!"
 
 	<span class="glyphicon glyphicon-time"></span>
 	{{ post.date | date:"%Y-%m-%d" }}
-  {% if site.leancloud.enable %}
+  {% if site.JB.leancloud.enable %}
       <span id="{{ post.url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
        <span class="post-meta-divider">|</span>
        <span class="post-meta-item-text"> 浏览量:  </span>
