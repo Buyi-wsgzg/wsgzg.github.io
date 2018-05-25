@@ -12,6 +12,8 @@ RLP（递归长度前缀编码）的目的是用来编码二进制数据的任�
 
 如果想要使用RLP编码字典，推荐两种规范的编码格式：一是使用key的字典序来组织`[[k1,v1], [k2,v2]...]`，二是采用以太坊使用的[Patricia Tree](https://github.com/ethereum/wiki/wiki/Patricia-Tree)编码。
 
+<!-- more -->
+
 ### 定义
 
 RLP编码只处理两类数据，它们是：

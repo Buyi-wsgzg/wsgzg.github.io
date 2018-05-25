@@ -19,6 +19,8 @@ tags : [JOS, lab]
 JOS使用仿真器来代替真实的物理机器运行操作系统。在仿真器上实验的好处之一就是可以在操作系统内部设置断点，但在真实的机器上，做到这一点是非常困难的。JOS使用qemu仿真器进行实验。但是qemu的debug功能不能支持对boot过程的调试，好在qemu支持远程debug，本实验中使用GNU debugger（GDB）来调试JOS，它可以深入到调试JOS的boot过程。
 当从git的仓库中`git clone`出实验代码后，进入目录，运行`make`，如果没有出现错误，我们得到kernel image（kernel.img）。
 
+<!-- more -->
+
 	wsgzg@wsgzg-VirtualBox:~/6.828$ cd lab
 	wsgzg@wsgzg-VirtualBox:~/6.828/lab$ make
 	+ as kern/entry.S
