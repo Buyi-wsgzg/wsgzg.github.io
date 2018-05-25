@@ -1,0 +1,12 @@
+/*
+ * blog.css
+ * Copyright (C) 2018 wsgzg
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+.post-date{
+	float:right;
+	padding:5px;
+	font-size:12px;
+}
